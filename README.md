@@ -1,0 +1,2 @@
+# EasyQuizzer
+Developed with the aim of helping teachers from different areas to create automated tests that are unique for each student. EasyQuizzer stores all questions in a database management system. Subsequently, an exam is set up with the desired items. The program will then run randomization algorithms that will shuffle both the questions and the alternatives so that there are no two identical exams.
