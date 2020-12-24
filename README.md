@@ -18,9 +18,9 @@ VERSÂO EM PORTUGUÊS do Brasil
 		INSTALAÇÃO-LINUX
 	CONCLUSÃO	
 	
-================================================================================
+
 ENGLISH VERSION
-================================================================================
+
 INTRODUCTION
 
 This software aims to facilitate the work of educators worldwide. With 
@@ -98,9 +98,9 @@ Enjoy it.
 Anderson Santos
 
 
-================================================================================
+
 VERSÂO EM PORTUGUÊS do Brasil
-================================================================================
+
 INTRODUÇÃO
 
 Este software têm como objetivo facilitar o trabalho de educadores mundo afora.
