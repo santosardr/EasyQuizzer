@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="apane" minHeight="248.0" minWidth="500.0" styleClass="Pane" stylesheets="@../../Resources/Principal.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXTextArea fx:id="TextoAlt" labelFloat="true" layoutX="10.0" layoutY="44.0" prefHeight="136.0" prefWidth="751.0" promptText="%Alternative Text" wrapText="true" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="40.0" />
+      <JFXCheckBox fx:id="Certa" layoutX="10.0" layoutY="199.0" text="%Correct alternative" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="7.0" />
+      <JFXButton fx:id="SalvarBtn" layoutX="598.0" layoutY="195.0" styleClass="Raised-Buttons" text="%SAVE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="113.0" />
+      <JFXButton fx:id="VoltarBtn" layoutX="685.0" layoutY="197.0" styleClass="Raised-Buttons" text="%BACK" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="24.0" />
+   </children>
+</AnchorPane>

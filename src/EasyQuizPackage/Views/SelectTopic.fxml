@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="400.0" minWidth="600.0" styleClass="Pane" stylesheets="@../../Resources/Principal.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXComboBox fx:id="Materia" labelFloat="true" layoutX="23.0" layoutY="29.0" prefHeight="32.0" prefWidth="409.0" promptText="%Subject" AnchorPane.topAnchor="30.0" AnchorPane.leftAnchor="23.0" />
+      <JFXComboBox fx:id="Topico" labelFloat="true" layoutX="22.0" layoutY="29.0" prefHeight="32.0" prefWidth="409.0" promptText="%Topic" AnchorPane.topAnchor="30.0" AnchorPane.leftAnchor="440.0" AnchorPane.rightAnchor="21.0" />
+      <JFXButton fx:id="VerAltBtn" buttonType="RAISED" layoutX="669.0" layoutY="71.0" styleClass="Raised-Buttons" text="%SEE ALTERNATIVES" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="114.0" />
+      <JFXButton fx:id="VoltarBtn" layoutX="783.0" layoutY="71.0" styleClass="Raised-Buttons" text="%BACK" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="23.0" />
+   </children>
+</AnchorPane>

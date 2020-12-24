@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane id="AnchorPane" prefHeight="330.0" prefWidth="618.0" styleClass="Pane" stylesheets="@../../Resources/Principal.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fx:id="TituloText" text="%ABOUT-TITLE" fontSmoothingType="LCD" layoutX="19.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title" textAlignment="CENTER" wrappingWidth="581.58984375" AnchorPane.topAnchor="14.30078125">
+         <font>
+            <Font name="Roboto Bold" size="18.0" />
+         </font>
+      </Text>
+      <TextFlow layoutX="19.0" layoutY="47.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="183.0" prefWidth="582.0" styleClass="Body1" textAlignment="JUSTIFY">
+         <children>
+            <Text fx:id="TextoText" text="%ABOUT-TEXT" fontSmoothingType="LCD" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY" textOrigin="TOP" wrappingWidth="583.0263061523438">
+               <font>
+                  <Font name="Roboto" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </TextFlow>
+      <JFXButton fx:id="VoltarButton" text="%BACK" buttonType="RAISED" focusTraversable="false" layoutX="265.0" layoutY="236.0" minWidth="88.0" prefHeight="36.0" ripplerFill="#ffd54f" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" AnchorPane.bottomAnchor="10.0">
+         <font>
+            <Font name="Roboto Medium" size="14.0" />
+         </font>
+         <padding>
+            <Insets left="16.0" right="16.0" />
+         </padding>
+         <styleClass>
+            <String fx:value="Raised-Buttons" />
+            <String fx:value="button" />
+         </styleClass>
+      </JFXButton>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</AnchorPane>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="apane" minHeight="160.0" minWidth="500.0" styleClass="Pane" stylesheets="@../../Resources/Principal.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXTextField fx:id="NomeMat" labelFloat="true" layoutX="14.0" layoutY="62.0" prefHeight="35.0" prefWidth="237.0" promptText="%Name" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="62.0" />
+      <JFXButton fx:id="AddMatBtn" buttonType="RAISED" layoutX="513.0" layoutY="75.0" prefHeight="25.0" prefWidth="119.0" styleClass="Raised-Buttons" text="%ADD" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="75.0" />
+      <JFXButton fx:id="VoltarBtn" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="703.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="112.0" styleClass="Raised-Buttons" text="%BACK" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="125.0" />
+      <JFXComboBox fx:id="CurMat" layoutX="264.0" layoutY="62.0" prefHeight="48.0" prefWidth="423.0" promptText="%Course" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="145.0" AnchorPane.topAnchor="62.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" styleClass="Pane" stylesheets="@../../Resources/Principal.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <FlowPane fx:id="MainFlowPane" alignment="CENTER" columnHalignment="CENTER" hgap="20.0" minHeight="450.0" minWidth="700.0" prefWrapLength="600.0" styleClass="Pane" vgap="20.0" />
+   </content>
+</ScrollPane>

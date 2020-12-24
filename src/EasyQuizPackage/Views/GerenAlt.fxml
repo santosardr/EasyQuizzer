@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane fx:id="ppane" dividerPositions="0.5" minHeight="400.0" minWidth="850.0" styleClass="Pane" stylesheets="@../../Resources/Principal.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <items>
+      <AnchorPane minWidth="400.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" styleClass="AppBarTitle" text="%Questions" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+            <JFXTreeTableView fx:id="TableQuest" layoutX="14.0" layoutY="107.0" prefHeight="514.0" prefWidth="585.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="107.0" />
+            <Label fx:id="TableQuestCount" layoutX="14.0" layoutY="60.0" styleClass="AppBarTitle" text="Label" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="55.0" />
+            <JFXTextField fx:id="TableQuestSearch" labelFloat="true" layoutX="299.0" layoutY="43.0" maxWidth="304.0" prefWidth="304.0" promptText="%Search Question" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="43.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane minWidth="400.0">
+         <children>
+            <Label layoutX="16.0" layoutY="12.0" styleClass="AppBarTitle" text="%Alternatives" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+            <JFXTreeTableView fx:id="TableAlt" layoutX="16.0" layoutY="12.0" prefHeight="447.0" prefWidth="432.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="107.0" />
+            <Label fx:id="TableAltCount" layoutX="14.0" layoutY="64.0" styleClass="AppBarTitle" text="Label" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="55.0" />
+            <JFXButton fx:id="EditBtn" buttonType="RAISED" layoutX="343.0" layoutY="630.0" styleClass="Raised-Buttons" text="%EDIT" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="201.0" />
+            <JFXTextField fx:id="TableAltSearch" labelFloat="true" layoutX="363.0" layoutY="40.0" prefWidth="235.0" promptText="%Search Alternative" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="40.0" />
+            <JFXButton fx:id="DelBtn" buttonType="RAISED" layoutX="427.0" layoutY="630.0" styleClass="Raised-Buttons" text="%DELETE" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="110.0" />
+            <JFXButton fx:id="VoltarBtn" layoutX="525.0" layoutY="630.0" styleClass="Raised-Buttons" text="%BACK" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="14.0" />
+            <JFXButton fx:id="AddBtn" buttonType="RAISED" layoutX="229.0" layoutY="630.0" styleClass="Raised-Buttons" text="%ADD" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="289.0" />
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>

@@ -1,0 +1,416 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02/11/2016, 11:40:52
+    Author     :  Arthur R. Cruz
+*/
+
+/*******************************************************************************
+ *                                                                             *
+ * Roboto Adicionada à todos os componentes                                    *
+ *                                                                             *
+ ******************************************************************************/
+
+.root {
+	-fx-font-family: "Roboto";	
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Botões Tipo Raised                                                          *
+ *                                                                             *
+ ******************************************************************************/
+
+.Raised-Buttons{
+    -fx-background-color: -orange-700;
+    -jfx-button-type: RAISED;
+    -fx-text-fill:white;
+    -fx-font-family: "Roboto Medium";
+    -fx-font-size: 14px;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * App Bar                                                                     *
+ *                                                                             *
+ ******************************************************************************/
+
+.AppBar{
+    -fx-background-color: -orange-700;
+}
+
+.AppBarTitle {
+    -fx-font-family: "Roboto Medium";
+    -fx-font-size: 20;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * MetroButtons                                                                *
+ *                                                                             *
+ ******************************************************************************/
+
+.Button2 {
+    -fx-font-family: "Roboto Black";
+    -fx-font-size: 14;
+    -fx-background-color: -orange-700;
+    -fx-text-fill:#FFFFFF;
+    -fx-max-width:180;
+    -fx-pref-width:150;
+    -fx-pref-height:150;
+    -fx-padding:5;
+    -fx-text-wrap: TRUE;
+    -fx-alignment: CENTER;
+    -fx-text-alignment: CENTER;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * JFXTextField                                                                *
+ *                                                                             *
+ ******************************************************************************/
+
+.jfx-text-field{
+    -fx-background-color: transparent;
+    -fx-font-weight: BOLD;
+    -fx-alignment: top-left ;
+    -jfx-focus-color: -orange-700;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 16;
+    -fx-pref-height: 48;
+    -fx-unfocus-color: #4D4D4D;
+    -fx-prompt-text-fill: -grey-500;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * JFXTextArea                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+
+.jfx-text-area{
+    -fx-background-color: transparent;
+    -fx-font-weight: BOLD;
+    -fx-alignment: top-left ;
+    -jfx-focus-color: -orange-700;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 16;
+    -fx-unfocus-color: #4D4D4D;
+    -fx-prompt-text-fill: -grey-500;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Panes                                                                       *
+ *                                                                             *
+ ******************************************************************************/
+
+.Pane{
+    -fx-background-color: white;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-background-size: 100% 100%;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * JFXTreeTableView                                                            *
+ *                                                                             *
+ ******************************************************************************/
+
+.tree-table-view{
+    -fx-tree-table-color: transparent;
+    -fx-tree-table-rippler-color : -orange-700;
+}
+.tree-table-view:focused .tree-table-row-cell:selected {
+    -fx-background-color: -orange-700;
+    -fx-table-cell-border-color: -orange-700;
+}
+
+
+.tree-table-view:focused .tree-table-row-cell:selected .tree-table-cell{
+    -fx-text-fill: #FFFFFF;
+}
+
+
+.tree-table-view .jfx-rippler {
+    -fx-rippler-fill: -fx-tree-table-rippler-color;
+}
+
+
+.tree-table-view .column-header ,
+.tree-table-view .column-header-background,
+.tree-table-view .column-header-background .filler{
+    -fx-background-color:TRANSPARENT;
+}
+
+
+.tree-table-view .column-header{
+    -fx-border-width : 0 1 0 1;
+    -fx-border-color: #F3F3F3;
+}
+
+
+.tree-table-view .column-header .label {
+    -fx-font-family: "Roboto Medium";
+    -fx-font-size: 14;
+    -fx-text-fill : #949494;
+    -fx-padding : 15 0 15 0;
+}
+
+.tree-table-view .column-header .arrow, .tree-table-view .column-header .sort-order-dot{ 
+    -fx-background-color : #949494;
+}
+
+
+.tree-table-view .column-header:last-visible {
+    -fx-border-width: 0 2 0 1;
+}
+
+
+.tree-table-view .column-header-background{
+    -fx-border-width : 0 0.0 1 0;
+    -fx-border-color:#F3F3F3;
+}
+
+
+.tree-table-view .tree-table-cell{
+    -fx-border-width:0 0 0 0;
+    -fx-padding : 15 0 15 0 ;
+    
+}
+
+
+.tree-table-view .column-overlay{
+    -fx-background-color: -fx-tree-table-color;
+}
+
+
+.tree-table-view .column-resize-line, .tree-table-view .column-drag-header{
+    -fx-background-color: -fx-tree-table-rippler-color;
+}
+
+
+.tree-table-view:focused {
+    -fx-background-color: -fx-tree-table-color,-fx-box-border,-fx-control-inner-background;
+    -fx-background-insets: -1.4, 0, 1;
+    -fx-background-radius: 1.4, 0, 0;
+    -fx-padding: 1; 
+}
+.tree-table-row-cell > .tree-disclosure-node > .arrow {
+    -fx-background-color: -fx-text-fill;
+    -fx-padding: 0.333333em 0.229em 0.333333em 0.229em; 
+    -fx-shape: "M 0 -3.5 L 4 0 L 0 3.5 z";
+}
+.tree-table-row-cell .jfx-text-field{
+    -fx-focus-color: rgba(240,40,40);
+}
+.tree-table-view .tree-table-cell{
+	-fx-border-width:0 0 0 0;
+	-fx-padding : 10 20 10 20 ;
+	-fx-alignment: top-center ;
+        -fx-font-family: "Roboto";
+        -fx-font-size: 14;
+        
+}
+
+
+.tree-table-view .scroll-bar:horizontal .track,
+.tree-table-view .scroll-bar:vertical .track{
+	-fx-background-color:transparent;
+	-fx-border-color:transparent;
+	-fx-background-radius: 0em;
+	-fx-border-radius:2em;
+}
+
+/* The increment and decrement button CSS class of scrollbar */
+.tree-table-view .scroll-bar:horizontal .increment-button ,
+.tree-table-view .scroll-bar:horizontal .decrement-button {
+    -fx-background-color:transparent;
+	-fx-background-radius: 0em;
+	-fx-padding:0 0 10 0;
+
+}
+
+/* The increment and decrement button CSS class of scrollbar */
+
+.tree-table-view .scroll-bar:vertical .increment-button ,
+.tree-table-view .scroll-bar:vertical .decrement-button {
+
+    -fx-background-color:transparent;
+	-fx-background-radius: 0em;
+	-fx-padding:0 10 0 0;
+
+}
+
+.tree-table-view  .scroll-bar .increment-arrow,
+.tree-table-view  .scroll-bar .decrement-arrow
+ {
+	-fx-shape: " ";	
+	-fx-padding:0;
+}
+
+/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
+.tree-table-view .scroll-bar:horizontal .thumb,
+.tree-table-view .scroll-bar:vertical .thumb {
+    -fx-background-color:derive(black,90%);
+	-fx-background-insets: 2, 0, 0;
+	-fx-background-radius: 2em;
+
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * JFXComboBox                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+
+.jfx-combo-box{
+    -fx-background-color: transparent;
+    -fx-font-weight: BOLD;
+    -fx-alignment: top-left ;
+    -jfx-focus-color: -orange-700;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 16;
+    -fx-unfocus-color: #4D4D4D;
+    -fx-prompt-text-fill: -grey-500;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * JFXCheckBox                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+
+.jfx-check-box{
+    -fx-background-color: transparent;
+    -fx-font-weight: BOLD;
+    -jfx-checked-color: -orange-700;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 16;
+    -jfx-unchecked-color: #4D4D4D;
+    -fx-prompt-text-fill: -grey-500;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * MenuBar                                                                     *
+ *                                                                             *
+ ******************************************************************************/
+
+.menu-bar {
+    -fx-padding: 0;
+    -fx-background-color: -orange-500;
+}
+.menu-bar .label{
+    -fx-text-fill: white;
+}
+.menu-button {
+    -fx-font-family: "Roboto Medium";
+    -fx-pref-height: 43px;
+    -fx-font-size: 14px;
+    
+}
+.menu:hover{
+    -fx-background-color: -orange-A200;
+}
+.menu:showing {
+    -fx-background-color: -orange-A200;
+}
+.menu-item{
+    -fx-background-color: -orange-500;
+    -fx-pref-width: 250px;
+}
+.menu-item .label{
+    -fx-font-family: "Roboto Medium";
+    -fx-text-fill: WHITE;
+    -fx-font-size: 14px;
+    -fx-padding: 0 65px 0 0;
+}
+.menu-item:focused{
+    -fx-background-color: -orange-A200;
+}
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-background-color: -orange-500;
+    -fx-padding: 0;
+/*    -fx-padding: 0.666667em 0.083333em 0.666667em 0.083333em;  8 1 8 1 */
+/*    -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em;  4 1 8 1 */
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * VBox                                                                        *
+ *                                                                             *
+ ******************************************************************************/
+
+.VBox{
+    -fx-padding: 10px;
+    -fx-background-color: -grey-500;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * SplitPaneDivider                                                            *
+ *                                                                             *
+ ******************************************************************************/
+
+.split-pane-divider{
+    -fx-background-color: -grey-800;
+    -fx-background-insets: 0;
+    -fx-opacity:0.75;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * JFXSlider                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+.jfx-slider .track{
+    -fx-background-color: white;
+}
+
+.jfx-slider .thumb, .animated-thumb{
+    -fx-background-color: -orange-500;
+}
+.jfx-slider .colored-track{
+    -fx-background-color: -orange-500;
+}
+/*******************************************************************************
+ *                                                                             *
+ * QuestaoLabel                                                                *
+ *                                                                             *
+ ******************************************************************************/
+.QuestaoLabel {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 14;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0.0 , 0 , 0 );
+    -fx-padding: 10px;
+}
+/*******************************************************************************
+ *                                                                             *
+ * Progress Bar                                                                *
+ *                                                                             *
+ ******************************************************************************/
+.jfx-progress-bar {
+    -fx-progress-color: #FFAB40;
+    -fx-stroke-width: 5;
+}
+.jfx-progress-bar .bar{
+    -fx-background-color:  #FFAB40;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Titled Pane                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+.titled-pane{
+    -fx-font-family: "Roboto";
+    -fx-font-size: 14;
+    -fx-font-weight: BOLD;
+}

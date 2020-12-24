@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<JFXDialogLayout maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="186.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane prefHeight="268.0" prefWidth="552.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="114.0" minHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="318.0" minHeight="0.0" prefHeight="72.0" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="204.0" minHeight="8.0" prefHeight="38.0" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <Label contentDisplay="CENTER" text="Sobre">
+               <font>
+                  <Font name="Roboto Medium" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="SobreDialogTextLabel" alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="253.0" prefWidth="605.0" text="%Text" textAlignment="CENTER" textFill="#757575" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="SobreDialogEntendiButton" defaultButton="true" prefHeight="36.0" ripplerFill="#c6c6c6" text="%GOT IT" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="16.0" right="16.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </GridPane>
+   </children>
+</JFXDialogLayout>

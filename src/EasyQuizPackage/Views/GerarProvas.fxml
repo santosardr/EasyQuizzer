@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="244.0" minWidth="600.0" prefHeight="244.0" prefWidth="600.0" styleClass="Pane" stylesheets="@../../Resources/Principal.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXTextField fx:id="local" labelFloat="true" layoutX="23.0" layoutY="31.0" prefWidth="458.0" promptText="%Save In" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="40.0" />
+      <JFXButton fx:id="escolher" buttonType="RAISED" layoutX="496.0" layoutY="41.0" styleClass="Raised-Buttons" text="%CHOOSE" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="50.0" />
+      <JFXProgressBar fx:id="pb" layoutY="13.0" prefHeight="4.0" secondaryProgress="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <JFXTextField fx:id="qtd_provas" labelFloat="true" layoutX="14.0" layoutY="110.0" prefWidth="566.0" promptText="%Number of exams" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="130.0" />
+      <JFXButton fx:id="gerar" defaultButton="true" layoutX="361.0" layoutY="175.0" styleClass="Raised-Buttons" text="%GENERATE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="120.0" />
+      <JFXButton fx:id="cancelar" buttonType="RAISED" cancelButton="true" layoutX="494.0" layoutY="173.0" styleClass="Raised-Buttons" text="%CANCEL" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="14.0" />
+   </children>
+</AnchorPane>

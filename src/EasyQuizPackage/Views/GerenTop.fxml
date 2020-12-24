@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="apane" minHeight="300.0" minWidth="500.0" styleClass="Pane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXTextField fx:id="SearchField" labelFloat="true" layoutX="667.0" layoutY="37.0" prefWidth="251.0" promptText="%Search Topic" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="37.0" />
+      <Label fx:id="TableCount" layoutX="26.0" layoutY="61.0" styleClass="AppBarTitle" text="Label" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="61.0" />
+      <JFXTreeTableView fx:id="Table" editable="true" layoutX="14.0" layoutY="98.0" prefHeight="395.0" prefWidth="905.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="98.0" />
+      <JFXButton fx:id="DelBtn" buttonType="RAISED" layoutX="751.0" layoutY="506.0" styleClass="Raised-Buttons" text="%DELETE" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="117.0" />
+      <JFXButton fx:id="VoltarBtn" buttonType="RAISED" layoutX="846.0" layoutY="506.0" styleClass="Raised-Buttons" text="%BACK" textAlignment="CENTER" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="26.0" />
+   </children>
+</AnchorPane>

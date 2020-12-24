@@ -1,6 +1,3 @@
-# EasyQuizzer
-Developed with the aim of helping teachers from different areas to create automated tests that are unique for each student. EasyQuizzer stores all questions in a database management system. Subsequently, an exam is set up with the desired items. The program will then run randomization algorithms that will shuffle both the questions and the alternatives so that there are no two identical exams.
-
 SUMMARY/SUMÁRIO
 
 ENGLISH VERSION
@@ -18,9 +15,9 @@ VERSÂO EM PORTUGUÊS do Brasil
 		INSTALAÇÃO-LINUX
 	CONCLUSÃO	
 	
-
+================================================================================
 ENGLISH VERSION
-
+================================================================================
 INTRODUCTION
 
 This software aims to facilitate the work of educators worldwide. With 
@@ -98,9 +95,9 @@ Enjoy it.
 Anderson Santos
 
 
-
+================================================================================
 VERSÂO EM PORTUGUÊS do Brasil
-
+================================================================================
 INTRODUÇÃO
 
 Este software têm como objetivo facilitar o trabalho de educadores mundo afora.

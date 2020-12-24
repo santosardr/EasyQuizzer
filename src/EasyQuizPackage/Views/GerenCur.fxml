@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="apane" minHeight="300.0" minWidth="500.0" styleClass="Pane" stylesheets="@../../Resources/Principal.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXTextField fx:id="search" layoutX="454.0" layoutY="33.0" prefWidth="386.0" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="33.0" />
+      <JFXTreeTableView fx:id="table" layoutX="27.0" layoutY="97.0" prefHeight="341.0" prefWidth="812.0" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="97.0" />
+      <JFXButton fx:id="voltar" layoutX="776.0" layoutY="473.0" styleClass="Raised-Buttons" text="%BACK" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="30.0" />
+      <JFXButton fx:id="del" layoutX="678.0" layoutY="473.0" styleClass="Raised-Buttons" text="%DELETE" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="124.0" />
+      <JFXButton fx:id="edit" layoutX="580.0" layoutY="473.0" styleClass="Raised-Buttons" text="%EDIT" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="232.0" />
+      <Label fx:id="count" layoutX="27.0" layoutY="57.0" styleClass="AppBarTitle" text="Label" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="57.0" />
+   </children>
+</AnchorPane>

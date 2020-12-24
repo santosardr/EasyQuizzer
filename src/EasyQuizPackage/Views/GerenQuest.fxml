@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane fx:id="spane" dividerPositions="0.55" minHeight="600.0" minWidth="1200.0" styleClass="Pane" stylesheets="@../../Resources/Principal.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: transparent;">
+         <children>
+            <JFXTextField fx:id="SearchFieldAbt" labelFloat="true" layoutX="457.0" layoutY="40.0" prefWidth="189.0" promptText="%Search Open Question" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="40.0" />
+            <Label fx:id="TableCountAbt" layoutX="14.0" layoutY="52.0" styleClass="AppBarTitle" text="Label" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="52.0" />
+            <JFXTreeTableView fx:id="TableAbt" editable="true" layoutX="14.0" layoutY="99.0" prefHeight="472.0" prefWidth="615.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="99.0" />
+            <JFXButton fx:id="DelAbtBtn" layoutX="455.0" layoutY="582.0" styleClass="Raised-Buttons" text="%DELETE" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="98.0" />
+            <JFXButton fx:id="VoltarAbtBtn" layoutX="577.0" layoutY="582.0" styleClass="Raised-Buttons" text="%BACK" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="10.0" />
+            <JFXButton fx:id="EditAbtBtn" buttonType="RAISED" layoutX="390.0" layoutY="582.0" styleClass="Raised-Buttons" text="%EDIT" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="192.0" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: transparent;">
+         <children>
+            <JFXButton fx:id="EditFBtn" buttonType="RAISED" layoutX="388.0" layoutY="582.0" styleClass="Raised-Buttons" text="%EDIT" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="191.0" />
+            <JFXButton fx:id="DelFBtn" layoutX="455.0" layoutY="582.0" styleClass="Raised-Buttons" text="%DELETE" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="98.0" />
+            <JFXButton fx:id="VoltarFBtn" layoutX="577.0" layoutY="582.0" styleClass="Raised-Buttons" text="%BACK" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="10.0" />
+            <Label fx:id="TableCountF" layoutX="21.0" layoutY="55.0" styleClass="AppBarTitle" text="Label" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="52.0" />
+            <JFXTextField fx:id="SearchFieldF" labelFloat="true" layoutX="448.0" layoutY="43.0" prefWidth="189.0" promptText="%Search Closed Question" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="40.0" />
+            <JFXTreeTableView fx:id="TableF" editable="true" layoutX="11.0" layoutY="100.0" prefHeight="472.0" prefWidth="615.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="99.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

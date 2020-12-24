@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+
+<FlowPane fx:id="fpane" minHeight="152.0" minWidth="363.0" prefWrapLength="0.0" rowValignment="TOP" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane fx:id="apane" styleClass="Pane" stylesheets="@../../Resources/Principal.css">
+         <children>
+            <JFXTextField fx:id="Nome" labelFloat="true" layoutX="30.0" layoutY="60.0" promptText="%Name" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="40.0" />
+            <JFXButton fx:id="AddCurBtn" buttonType="RAISED" defaultButton="true" layoutX="476.0" layoutY="57.0" styleClass="Raised-Buttons" text="%ADD" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="57.0" />
+            <JFXButton fx:id="VoltarBtn" cancelButton="true" layoutX="730.0" layoutY="119.0" styleClass="Raised-Buttons" text="%BACK" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="119.0" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </AnchorPane>
+   </children>
+</FlowPane>

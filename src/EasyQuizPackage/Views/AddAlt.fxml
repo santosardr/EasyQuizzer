@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="181.0" prefWidth="729.0" styleClass="Pane" stylesheets="@../../Resources/Principal.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXTextArea fx:id="TextoAlt" labelFloat="true" layoutX="9.0" layoutY="400.0" prefHeight="88.0" prefWidth="711.0" promptText="%Alternative Text" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="19.0" />
+      <JFXCheckBox fx:id="Certa" layoutX="9.0" layoutY="529.0" text="%Correct alternative" textAlignment="CENTER" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="9.0" />
+      <JFXButton fx:id="AddBtn" layoutX="522.0" layoutY="528.0" styleClass="Raised-Buttons" text="%ADD" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="128.0" />
+      <JFXButton fx:id="VoltarBtn" layoutX="639.0" layoutY="527.0" styleClass="Raised-Buttons" text="%BACK" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="29.0" />
+   </children>
+</AnchorPane>

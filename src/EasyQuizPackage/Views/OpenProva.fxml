@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@../../Resources/Principal.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+  <content>
+    <AnchorPane fx:id="apane" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" styleClass="Pane">
+         <children>
+            <Label fx:id="tableCount" layoutX="28.0" layoutY="47.0" styleClass="AppBarTitle" text="Label" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="47.0" />
+            <JFXTextField fx:id="searchField" labelFloat="true" layoutX="333.0" layoutY="35.0" prefWidth="537.0" promptText="%Search" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="35.0" />
+            <JFXTreeTableView fx:id="table" layoutX="56.0" layoutY="99.0" prefHeight="437.0" prefWidth="858.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0" />
+            <JFXButton fx:id="excluir" buttonType="RAISED" layoutX="494.0" layoutY="556.0" styleClass="Raised-Buttons" text="%DELETE" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="215.0" />
+            <JFXButton fx:id="abrir" buttonType="RAISED" defaultButton="true" layoutX="708.0" layoutY="556.0" styleClass="Raised-Buttons" text="%OPEN" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="130.0" />
+            <JFXButton fx:id="cancelar" buttonType="RAISED" cancelButton="true" layoutX="826.0" layoutY="559.0" styleClass="Raised-Buttons" text="%BACK" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="20.0" />
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

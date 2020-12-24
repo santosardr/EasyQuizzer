@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="664.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <AnchorPane fx:id="apane" minHeight="662.0" minWidth="701.0" nodeOrientation="LEFT_TO_RIGHT" styleClass="Pane" stylesheets="@../../Resources/Principal.css">
+         <children>
+            <JFXTextField fx:id="Nome" labelFloat="true" layoutX="19.0" layoutY="38.0" maxWidth="617.0" prefWidth="617.0" promptText="%Exam's Name" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="35.0" />
+            <JFXTextField fx:id="Prof" labelFloat="true" layoutX="19.0" layoutY="38.0" maxWidth="617.0" prefWidth="617.0" promptText="%Teacher" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="125.0" />
+            <JFXComboBox fx:id="Curso" labelFloat="true" layoutX="20.0" layoutY="125.0" prefWidth="617.0" promptText="%Course" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="215.0" />
+            <JFXComboBox fx:id="Materia" labelFloat="true" layoutX="19.0" layoutY="482.0" prefHeight="48.0" prefWidth="662.0" promptText="%Subject" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="285.0" />
+            <JFXTextField fx:id="Insti" labelFloat="true" layoutX="20.0" layoutY="211.0" prefWidth="300.0" promptText="%Institution" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="366.0" AnchorPane.topAnchor="365.0" />
+            <JFXDatePicker fx:id="Data" defaultColor="#ff9800" layoutX="366.0" layoutY="211.0" prefHeight="48.0" prefWidth="315.0" promptText="%Date" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="365.0" />
+            <JFXTextField fx:id="Nota" labelFloat="true" layoutX="20.0" layoutY="303.0" prefWidth="315.0" promptText="%Score/Grade" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="455.0" />
+            <JFXTextField fx:id="Turma" labelFloat="true" layoutX="366.0" layoutY="301.0" prefWidth="300.0" promptText="%Class" AnchorPane.leftAnchor="366.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="455.0" />
+            <JFXComboBox fx:id="modelo" labelFloat="true" layoutX="20.0" layoutY="395.0" prefHeight="48.0" prefWidth="315.0" promptText="%Exam Model" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="545.0" />
+            <JFXSlider fx:id="tamanho" blockIncrement="1.0" layoutX="20.0" layoutY="494.0" max="24.0" min="8.0" prefHeight="38.0" prefWidth="315.0" showTickLabels="true" showTickMarks="true" styleClass="jfx-slider" value="12.0" AnchorPane.leftAnchor="366.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="561.0" />
+            <Label layoutX="366.0" layoutY="365.0" style="-fx-font-size: 18;" styleClass="AppBarTitle" text="%Font Size" AnchorPane.leftAnchor="366.0" AnchorPane.topAnchor="525.0" />
+            <JFXButton fx:id="Salvar" defaultButton="true" layoutX="488.0" layoutY="377.0" styleClass="Raised-Buttons" text="%SAVE" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="140.0" />
+            <JFXButton fx:id="Cancelar" cancelButton="true" layoutX="589.0" layoutY="377.0" styleClass="Raised-Buttons" text="%CANCEL" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="20.0" />
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

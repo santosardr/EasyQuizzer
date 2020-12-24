@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="386.0" prefWidth="303.0" stylesheets="@../../Resources/Principal.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <AnchorPane fx:id="apane" minHeight="300.0" minWidth="300.0" prefHeight="370.0" prefWidth="301.0" styleClass="Pane">
+         <children>
+            <JFXComboBox fx:id="modelo" labelFloat="true" layoutX="11.0" layoutY="24.0" prefHeight="32.0" prefWidth="232.0" promptText="%Exam Model" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="30.0" />
+            <JFXComboBox fx:id="fonte" labelFloat="true" layoutX="13.0" layoutY="93.0" prefHeight="32.0" prefWidth="228.0" promptText="%Font" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="93.0" />
+            <Label layoutX="26.0" layoutY="161.0" style="-fx-font-size: 18;" styleClass="AppBarTitle" text="%Size" AnchorPane.leftAnchor="26.0" />
+            <JFXSlider fx:id="tamanho" blockIncrement="1.0" layoutX="26.0" layoutY="220.0" max="24.0" min="8.0" prefHeight="38.0" prefWidth="229.0" showTickLabels="true" showTickMarks="true" styleClass="jfx-slider" value="12.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="220.0" />
+            <JFXComboBox labelFloat="true" layoutX="26.0" layoutY="275.0" prefHeight="32.0" prefWidth="251.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="275.0" />
+            <JFXButton fx:id="salvar" buttonType="RAISED" defaultButton="true" layoutX="27.0" layoutY="223.0" styleClass="Raised-Buttons" text="%SAVE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="26.0" />
+            <JFXButton fx:id="cancelar" buttonType="RAISED" cancelButton="true" layoutX="136.0" layoutY="223.0" styleClass="Raised-Buttons" text="%CANCEL" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="26.0" />
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>
