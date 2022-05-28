@@ -149,9 +149,14 @@ public class GerenAltFXMLController extends TemplateMethod{
                         if(TopicoF.validateValue(param)) return new SimpleStringProperty(param.getValue().getValue().getTopico());
                         else return TopicoF.getComputedValue(param);
             });
+     
+            QuestaoFechadaBean bean= new QuestaoFechadaBean();            
+            bean.setTopico_ID(Integer.parseInt(this.nomeTopico));
+
             QuestaoFechadaDAO dao4 = new QuestaoFechadaDAO();
             ObservableList<QuestaoFechadaBean> lista2 = FXCollections.observableArrayList();
-            lista2.addAll(dao4.Get_All());
+
+            lista2.addAll(dao4.GetAllTopico(bean));
             final TreeItem<QuestaoFechadaBean> root2 = new RecursiveTreeItem<>(lista2,RecursiveTreeObject::getChildren);
             //this.TableQuest.getColumns().setAll(IDF,EnunciadoF,MateriaF,TopicoF); // Removido ID da visualização
             this.TableQuest.getColumns().setAll(EnunciadoF,MateriaF,TopicoF);

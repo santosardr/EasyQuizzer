@@ -104,7 +104,7 @@ public class SelectTopicFXMLController extends TemplateMethod{
             msg.showAndWait();
         }else{
             String nomeMateria = ((String)this.Materia.getSelectionModel().getSelectedItem()).split(" : ")[1];
-            String nomeTopico = ((String)this.Topico.getSelectionModel().getSelectedItem()).split(" : ")[1];
+            String nomeTopico = ((String)this.Topico.getSelectionModel().getSelectedItem()).split(" : ")[0];
             new GerenAltFXMLController(this.MainPane, nomeMateria, nomeTopico);
         }
     }
