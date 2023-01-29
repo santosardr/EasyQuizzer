@@ -168,7 +168,7 @@ necessário instalar o postgres no Linux basta digitar esse comando:
 sudo apt install postgresql-12
 ```
 
-Nos sistemas Linux também costuma estarem instaladas versões abertas do java.
+Nos sistemas Linux também costumam estarem instaladas versões abertas do java.
 No entanto, o pacote openjfx padrão no Ubuntu não é mais compatível com o OpenJDK 8.
 Você pode usar a versão mais antiga do pacote openjfx instalado com alguns
 binários java específicos. Este post explica várias possibilidades para prosseguir.
