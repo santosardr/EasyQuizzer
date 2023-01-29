@@ -3,25 +3,23 @@ Developed with the aim of helping teachers from different areas to create automa
 
 SUMMARY/SUMÁRIO
 
-ENGLISH VERSION
-	INTRODUCTION
-	INSTALLATION
-		INSTALLATION-WINDOWS
-		INSTALLATION-LINUX
-	CONCLUSION
+- ENGLISH VERSION
+	- INTRODUCTION
+	- INSTALLATION
+		- INSTALLATION-WINDOWS
+		- INSTALLATION-LINUX
+	- CONCLUSION
 
 
-VERSÂO EM PORTUGUÊS do Brasil
-	INTRODUÇÃO
-	INSTALAÇÃO
-		INSTALAÇÃO-WINDOWS
-		INSTALAÇÃO-LINUX
-	CONCLUSÃO	
+- VERSÂO EM PORTUGUÊS do Brasil
+	- INTRODUÇÃO
+	- INSTALAÇÃO
+		- INSTALAÇÃO-WINDOWS
+		- INSTALAÇÃO-LINUX
+	- CONCLUSÃO	
 	
 
-ENGLISH VERSION
-
-INTRODUCTION
+# ENGLISH VERSION - INTRODUCTION
 
 This software aims to facilitate the work of educators worldwide. With 
 EasyQuizzer you can create a question's databases of right and wrong 
@@ -50,11 +48,12 @@ by version 1.0 is compatible with version 2.0 and vice-versa.
 
 --
 
-INSTALLATION
+# INSTALLATION
 
-INSTALLATION-WINDOWS
+## INSTALLATION-WINDOWS
+
 The primary requirement for installing EasyQuizzer is to have the System 
-Database Manager (DBMS) Postgres 9.5 or higher version installed in the machine.
+Database Manager (DBMS) Postgres 10 or higher version installed in the machine.
 The page to download Postgres according to your system is this:
 
 https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
@@ -62,45 +61,42 @@ https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 As we built the program in Java 8, then the Java JRE or JDK should also 
 previously installed.
 
-INSTALLATION-LINUX
+## INSTALLATION-LINUX
+
 Postgres DBMS usually is installed by default in most Linux distributions. 
 An EasyQuizzer user should remember that if he will use the software on a Linux 
 SO perhaps the installation of Postgres is not necessary any longer. In case of 
 needing to install Postgres on Linux enter this command:
 
-sudo apt install postgresql-9.5
+```bash
+sudo apt install postgresql-12
+```
 
-Open versions of java are often installed on Linux systems.
-If your system has OpenJDK version 8, then you do not have to install the 
-Oracle's Java. In case you need to install OpenJDK enter this command:
+Open versions of java are often installed on Linux systems. However,
+the default openjfx package on Ubuntu is no longer compatible with OpenJDK 8. 
+You may use the older version of the openjfx package installed with some
+specific java binaries. This post explains several possibilities to proceed.
 
-sudo apt install openjdk-8-jdk
+https://stackoverflow.com/questions/61783369/install-openjdkopenjfx-8-on-ubuntu-20
 
-In the case of Linux, you also must install an additional library via the 
-command:
+I adopted the below solution. 
 
-sudo apt install openjfx
 
-https://askubuntu.com/questions/1137891/how-to-install-run-java-8-and-javafx-on-ubuntu-18-04
-The default openjfx package on Ubuntu 18.04 is not compatible with OpenJDK 8. 
-You may use the older version of the openjfx package. 
-Please note that it's not a fully secure solution because you won't get updates for the package.
+```bash
+curl -s "https://get.sdkman.io" | bash
 
-sudo apt install \
-  openjfx=8u161-b12-1ubuntu2 \
-  libopenjfx-java=8u161-b12-1ubuntu2 \
-  libopenjfx-jni=8u161-b12-1ubuntu2
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-Hold the package:
+sdk install java 8.0.252.fx-zulu
+```
 
-sudo apt-mark hold \
-  openjfx \
-  libopenjfx-java \
-  libopenjfx-jni
+Depending on your operational system, the package name varies. A simple search within 
+the repository can show you several possibilities.
 
 --
 
-CONCLUSION
+# CONCLUSION
+
 Guaranteed Java, Postgres, and openjfx (Linux only) installations, in theory, 
 all that remains is to click on the file EasyQuizzer_vX.0.jar to start to enjoy 
 the program or type java -jar EasyQuizzer_vX.0.jar at the command line, where X 
@@ -116,9 +112,7 @@ Anderson Santos
 
 
 
-VERSÂO EM PORTUGUÊS do Brasil
-
-INTRODUÇÃO
+# VERSÂO EM PORTUGUÊS- INTRODUÇÃO
 
 Este software têm como objetivo facilitar o trabalho de educadores mundo afora.
 Com o EasyQuizzer será possível criar bancos de dados de questões e alterna-
@@ -149,11 +143,12 @@ Português.
 
 --
 
-INSTALAÇÃO
+# INSTALAÇÃO
 
-INSTALAÇÃO-WINDOWS
+## INSTALAÇÃO-WINDOWS
+
 O principal requisito para instalação do EasyQuizzer é ter previamente o Sistema
-Gerenciador de Banco de Dados (SGBD) Postgres 9.5 ou superior instalado na
+Gerenciador de Banco de Dados (SGBD) Postgres 10 ou superior instalado na
 máquina. A página para baixar o Postgres de acordo com o seu sistema 
 operacional é esta:
 
@@ -162,31 +157,46 @@ https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 Como o programa foi feito em Java 8, então o JRE ou JDK da Java também deve 
 estar previamente instalado.
 
-INSTALAÇÃO-LINUX
+## INSTALAÇÃO-LINUX
+
 Convêm lembrar que se o Easyquizzer vai ser utilizado em Linux é provável que
 não seja necessária a instalação do Postgres porque esse SGBD costuma estar
 instalado por padrão na maioria das distribuições Linux. Em caso de ser
 necessário instalar o postgres no Linux basta digitar esse comando:
 
-sudo apt install postgresql-9.5
+```bash
+sudo apt install postgresql-12
+```
 
-Nos sistemas Linux também costuma estar instaladas versões abertas do java.
-Se o seu sistema possui o openjdk versão 8 então você não precisa instalar o
-java da Oracle. Para o caso de necessitar o openjdk basta digitar o comando:
+Nos sistemas Linux também costuma estarem instaladas versões abertas do java.
+No entanto, o pacote openjfx padrão no Ubuntu não é mais compatível com o OpenJDK 8.
+Você pode usar a versão mais antiga do pacote openjfx instalado com alguns
+binários java específicos. Este post explica várias possibilidades para prosseguir.
 
-sudo apt install openjdk-8-jdk
+https://stackoverflow.com/questions/61783369/install-openjdkopenjfx-8-on-ubuntu-20
 
-No caso do Linux, uma biblioteca adicional deve ser instalada via o comando: 
+Adotei a solução abaixo.
 
-sudo apt install openjfx
+```bash
+curl -s "https://get.sdkman.io" | bash
+
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+sdk install java 8.0.252.fx-zulu
+```
+
+Dependendo do seu sistema operacional, o nome do pacote varia. Uma simples pesquisa 
+no repositório pode mostrar várias possibilidades.
+
 --
 
-CONCLUSÃO
+# CONCLUSÃO
+
 Garantidas as instalações prévias da Java, do Postgres e openjfx (apenas Linux) 
 em teoria tudo o que restá e clicar no arquivo EasyQuizzer_v1.0.jar para começar
- a usufruir do programa.
+a usufruir do programa.
 O programa foi testado com sucesso nos sistemas operacionas Window 7, Windows 10
- e Linux Ubuntu 18.04 LTS. 
+e Linux Ubuntu 18.04 LTS. 
 
 Se encontrarem problemas que impeçam o uso favor entrar em contato com os 
 desenvolvedores do EasyQuizzer.
