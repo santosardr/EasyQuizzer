@@ -69,8 +69,46 @@ SO perhaps the installation of Postgres is not necessary any longer. In case of
 needing to install Postgres on Linux enter this command:
 
 ```bash
-sudo apt install postgresql-12
+sudo apt install postgresql
 ```
+We need access to the Postgres database administrator user without necessarily logging in to the Postgres user of the operating system (OS). For this, we must change the password of the Postgres user of the OS:
+
+```bash 
+sudo passwd postgres 
+``` 
+Once the password is changed, we need to log in with the Postgres user in the OS:
+
+```bash 
+su postgres 
+``` 
+As the OS Postgres user, we need to change the password of the Postgres database user. Note that they are distinct users with the same name: the OS and DBMS users are called "postgres". To change the password of the DBMS Postgres user, we first call the psql command:
+
+```bash 
+
+psql 
+``` 
+No password is requested as we are logged in with the OS user who administers the DBMS. Once the psql interface is opened, we can change the password of the Postgres user of the DBMS with the command: 
+
+```sql  
+
+postgres=# ALTER USER postgres WITH ENCRYPTED PASSWORD 'your-postgres-password'; 
+
+postgres=# \q 
+
+``` 
+
+If the above command was successful, you could close the DBMS session and your OS Postgres user: 
+
+```bash 
+exit 
+``` 
+... back to your Ubuntu OS admin user. Now you can run the command below without necessarily being the Postgres user of the OS:
+
+```bash 
+psql -h localhost -U postgres -p 5432 -c "\du" 
+``` 
+
+The above command should return the users registered in your database. As you have just installed Postgres, only the user "postgres" should be in your DBMS. 
 
 Open versions of java are often installed on Linux systems. However,
 the default openjfx package on Ubuntu is no longer compatible with OpenJDK 8. 
@@ -87,7 +125,7 @@ curl -s "https://get.sdkman.io" | bash
 
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-sdk install java 8.0.252.fx-zulu
+sdk install java 8.0.352.fx-zulu
 ```
 
 Depending on your operational system, the package name varies. A simple search within 
@@ -102,7 +140,7 @@ all that remains is to click on the file EasyQuizzer_vX.0.jar to start to enjoy
 the program or type java -jar EasyQuizzer_vX.0.jar at the command line, where X 
 can be 1 or 2 version. 
 The program has been tested successfully on the operating systems Window 7, 
-Windows 10 and Linux Ubuntu 18.04 LTS.
+Windows 10 and Linux Ubuntu 18.04 LTS and 20.04 LTS.
 
 If you encounter any problems, please contact the EasyQuizzer developers.
 
@@ -165,8 +203,46 @@ instalado por padrão na maioria das distribuições Linux. Em caso de ser
 necessário instalar o postgres no Linux basta digitar esse comando:
 
 ```bash
-sudo apt install postgresql-12
+sudo apt install postgresql
 ```
+
+Precisamos ter acesso ao usuário administrador de banco de dados do postgres sem necessariamente fazermos o login no usuário postgres do sistema operacional (SO). Para isto, temos que alterar a senha do usuário postgres do SO: 
+```bash 
+sudo passwd postgres 
+``` 
+
+Uma vez alterada a senha precisamos logar com o usuário postgres no SO: 
+```bash 
+su postgres 
+``` 
+
+Como o usuário postgres do SO, precisamos alterar a senha do usuário de banco de dados do postgres. Perceba que são usuários distintos com o mesmo nome: o usuário do SO e o do SGBD se chamam postgres. Para alterar a senha do usuário postgres do SGBD, primeiro chamamos o comando psql: 
+
+```bash 
+psql 
+``` 
+
+Como estamos logados com o usuário do SO que administra o SGBD não é solicitada nenhuma senha. Uma vez aberta a interface do psql podemos alterar a senha do usuário postgres do SGBD com o comando: 
+
+```sql  
+postgres=# ALTER USER postgres WITH ENCRYPTED PASSWORD 'sua-senha-postgres'; 
+
+postgres=# \q 
+
+``` 
+
+Se o comando acima foi bem-sucedido, você pode fechar a sessão do SGBD e do seu usuário postgres do SO: 
+
+```bash 
+exit 
+``` 
+... voltando a seu usuário administrador do SO Ubuntu. Agora você consegue executar o comando abaixo sem necessariamente estar no usuário postgres do SO: 
+
+```bash 
+psql -h localhost -U postgres -p 5432 -c "\du" 
+``` 
+
+O comando acima deve retornar os usuários cadastrados no seu banco de dados. Como você acabou de instalar o postgres deve haver apenas o usuário "postgres" no seu SGBD.
 
 Nos sistemas Linux também costumam estarem instaladas versões abertas do java.
 No entanto, o pacote openjfx padrão no Ubuntu não é mais compatível com o OpenJDK 8.
@@ -182,7 +258,7 @@ curl -s "https://get.sdkman.io" | bash
 
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-sdk install java 8.0.252.fx-zulu
+sdk install java 8.0.352.fx-zulu
 ```
 
 Dependendo do seu sistema operacional, o nome do pacote varia. Uma simples pesquisa 
@@ -196,7 +272,7 @@ Garantidas as instalações prévias da Java, do Postgres e openjfx (apenas Linu
 em teoria tudo o que restá e clicar no arquivo EasyQuizzer_v1.0.jar para começar
 a usufruir do programa.
 O programa foi testado com sucesso nos sistemas operacionas Window 7, Windows 10
-e Linux Ubuntu 18.04 LTS. 
+e Linux Ubuntu 18.04 LTS e 20.04 LTS. 
 
 Se encontrarem problemas que impeçam o uso favor entrar em contato com os 
 desenvolvedores do EasyQuizzer.
