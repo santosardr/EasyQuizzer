@@ -269,8 +269,8 @@ public class GerarProvaFXMLController extends Stage implements Initializable{
                                     double cc = (double)c/(double)total_fec;
                                     double dc = (double)d/(double)total_fec;
                                     double ec = (double)e/(double)total_fec;
-                                    double limiar_up = 0.4;
-                                    double limiar_down = 0.1;
+                                    double limiar_up = 0.35;
+                                    double limiar_down = 0.15;
                                     System.out.println("Test: "+numerador+"| A = "+ac+" B = "+bc+" C = "+cc+" D = "+dc+" E = "+ec+" L_UP = "+limiar_up+" L_DOWN = "+limiar_down+" |"+ " finished  = "+ provas.size() );
                                     if(  ac>limiar_up  || ac<limiar_down) {
                                         ite.remove();
