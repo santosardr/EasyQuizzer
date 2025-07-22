@@ -216,8 +216,51 @@ public class GerarProvaFXMLController extends Stage implements Initializable{
                                 }
                             }
                             else{
+                                // CORREÇÃO 13: Adicionar contador de tentativas para evitar loop infinito
+                                int tentativas = 0;
+                                int maxTentativas = qtd2 * 1000; // Limite máximo de tentativas
+                                
                                 while(provas.size() != qtd2){
+                                    tentativas++;
+                                    if(tentativas > maxTentativas) {
+                                        System.err.println("ERRO CRÍTICO: Excedido limite de tentativas (" + maxTentativas + ") para gerar " + qtd2 + " provas únicas.");
+                                        System.err.println("Provas geradas até agora: " + provas.size());
+                                        break;
+                                    }
+                                    
+                                    if(tentativas % 100 == 0) {
+                                        System.out.println("Tentativa " + tentativas + " - Provas geradas: " + provas.size() + "/" + qtd2);
+                                    }
+                                    
                                     PermutacaoBean aux = gerarPermutacao();
+                                    // CORREÇÃO 14: Verificar se gerarPermutacao retornou null
+                                    if(aux == null) {
+                                        System.err.println("ERRO: gerarPermutacao retornou null na tentativa " + tentativas);
+                                        continue;
+                                    }
+                                    
+                                    // CORREÇÃO 15: Verificar se a permutação tem questões válidas
+                                    boolean permutacaoValida = true;
+                                    for(Questao q : aux.getQuestoes()) {
+                                        if(q == null) {
+                                            System.err.println("ERRO: Questão null encontrada na permutação");
+                                            permutacaoValida = false;
+                                            break;
+                                        }
+                                        if(q instanceof QuestaoFechadaBean) {
+                                            QuestaoFechadaBean qf = (QuestaoFechadaBean)q;
+                                            if(qf.getSelecionadas() == null || qf.getSelecionadas().size() == 0) {
+                                                System.err.println("ERRO: Questão " + qf.getID() + " sem alternativas selecionadas");
+                                                permutacaoValida = false;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    
+                                    if(!permutacaoValida) {
+                                        continue;
+                                    }
+                                    
                                     if(!existePerm(aux,provas)){
                                         provas.add(aux);
 					aux=null;
@@ -236,7 +279,8 @@ public class GerarProvaFXMLController extends Stage implements Initializable{
                                             total_fec++;
                                             QuestaoFechadaBean aux2 = ((QuestaoFechadaBean)quest);
                                             for(int z = 0; z < aux2.getSelecionadas().size(); z++){
-                                                if(aux2.getSelecionadas().get(z).isCerta()){
+                                                // CORREÇÃO 17: Verificação defensiva contra alternativas null
+                                                if(aux2.getSelecionadas().get(z) != null && aux2.getSelecionadas().get(z).isCerta()){
                                                     switch(z){
                                                         case 0:
                                                             a++;
@@ -357,7 +401,17 @@ public class GerarProvaFXMLController extends Stage implements Initializable{
         ArrayList<Questao> temp = new ArrayList<>();
         temp.addAll(this.quests);
         Random random = new Random();
+        
+        // CORREÇÃO 16: Contador de tentativas para evitar loop infinito em gerarPermutacao
+        int tentativasPermutacao = 0;
+        int maxTentativasPermutacao = this.quests.size() * 100;
+        
         while(bean.size() != this.quests.size()){
+            tentativasPermutacao++;
+            if(tentativasPermutacao > maxTentativasPermutacao) {
+                System.err.println("ERRO CRÍTICO: Excedido limite de tentativas em gerarPermutacao");
+                return null;
+            }
             int index = random.nextInt(temp.size());
             Questao aux = null;
             if(temp.get(index) instanceof QuestaoAbertaBean){
@@ -376,7 +430,12 @@ public class GerarProvaFXMLController extends Stage implements Initializable{
                     default:
                         break;
                 }
+                // CORREÇÃO 12: Verificar se randomAlts retornou null
                 aux = randomAlts((QuestaoFechadaBean)temp.remove(index),total);
+                if(aux == null) {
+                    System.err.println("ERRO: randomAlts retornou null, tentando novamente...");
+                    continue; // Tenta novamente sem incrementar o bean
+                }
             }
             bean.addQuestao(aux);
         }
@@ -384,8 +443,24 @@ public class GerarProvaFXMLController extends Stage implements Initializable{
         return bean;
     }
     private QuestaoFechadaBean randomAlts(QuestaoFechadaBean a, int total){
+        // CORREÇÃO 1: Obter listas frescas do banco para evitar reutilização
         ArrayList<AlternativaBean> certas = a.getAlternativasCertas();
         ArrayList<AlternativaBean> erradas = a.getAlternativasErradas();
+        
+        // CORREÇÃO 2: Criar cópias das listas para não modificar as originais
+        ArrayList<AlternativaBean> certasCopia = new ArrayList<>(certas);
+        ArrayList<AlternativaBean> erradasCopia = new ArrayList<>(erradas);
+        
+        // CORREÇÃO 3: Validação defensiva - verificar se há alternativas suficientes
+        if(certasCopia.size() == 0) {
+            System.err.println("ERRO CRÍTICO: Questão " + a.getID() + " não possui alternativas certas!");
+            return null;
+        }
+        if(erradasCopia.size() < (total - 1)) {
+            System.err.println("ERRO CRÍTICO: Questão " + a.getID() + " não possui alternativas erradas suficientes! Necessário: " + (total-1) + ", Disponível: " + erradasCopia.size());
+            return null;
+        }
+        
         QuestaoFechadaBean randomizada = new QuestaoFechadaBean();
         randomizada.setEnunciado(a.getEnunciado());
         randomizada.setID(a.getID());
@@ -393,21 +468,54 @@ public class GerarProvaFXMLController extends Stage implements Initializable{
         Random random = new Random();
         AlternativaBean[] temporario = new AlternativaBean[total];
         int index = 0;
-        index = random.nextInt(certas.size());
-        AlternativaBean certa = certas.get(index);
-        int pos = random.nextInt(total);
-        temporario[pos] = certa;
-        int faltam = total-1;
-        while(faltam > 0){
-            index = random.nextInt(erradas.size());
-            AlternativaBean errada = erradas.remove(index);
-            do{
-                index = random.nextInt(total);
-            }while(temporario[index] != null);
-            temporario[index] = errada;
-            faltam--;
+        
+        // CORREÇÃO 4: Try-catch para capturar possíveis exceções
+        try {
+            // Seleciona uma alternativa certa
+            index = random.nextInt(certasCopia.size());
+            AlternativaBean certa = certasCopia.get(index);
+            int pos = random.nextInt(total);
+            temporario[pos] = certa;
+            
+            // Seleciona alternativas erradas
+            int faltam = total-1;
+            while(faltam > 0){
+                // CORREÇÃO 5: Verificação adicional antes de acessar lista
+                if(erradasCopia.size() == 0) {
+                    System.err.println("ERRO: Lista de alternativas erradas vazia durante processamento da questão " + a.getID());
+                    break;
+                }
+                
+                index = random.nextInt(erradasCopia.size());
+                // CORREÇÃO 6: Remove da CÓPIA, não da lista original
+                AlternativaBean errada = erradasCopia.remove(index);
+                do{
+                    index = random.nextInt(total);
+                }while(temporario[index] != null);
+                temporario[index] = errada;
+                faltam--;
+            }
+            
+            // CORREÇÃO 7: Verificação final - garantir que todas as posições foram preenchidas
+            for(int i = 0; i < total; i++) {
+                if(temporario[i] == null) {
+                    System.err.println("ERRO: Posição " + i + " do array temporário está null para questão " + a.getID());
+                }
+            }
+            
+            // CORREÇÃO 8: Filtrar nulls antes de adicionar (defensivo)
+            for(AlternativaBean alt : temporario) {
+                if(alt != null) {
+                    randomizada.getSelecionadas().add(alt);
+                }
+            }
+            
+        } catch (Exception e) {
+            System.err.println("EXCEÇÃO em randomAlts para questão " + a.getID() + ": " + e.getMessage());
+            e.printStackTrace();
+            return null;
         }
-        randomizada.getSelecionadas().addAll(Arrays.asList(temporario));
+        
         return randomizada;
     }
     private boolean existePerm(PermutacaoBean bean, ArrayList<PermutacaoBean> lista){
@@ -430,9 +538,39 @@ public class GerarProvaFXMLController extends Stage implements Initializable{
                         }
                     }
                     if(cp.getQuestoes().get(i) instanceof QuestaoFechadaBean && bean.getQuestoes().get(i) instanceof QuestaoFechadaBean){
-                        int total = ((QuestaoFechadaBean)cp.getQuestoes().get(i)).getSelecionadas().size();
-                        for(int f = 0 ; f < total ; f++){
-                            if(((QuestaoFechadaBean)cp.getQuestoes().get(i)).getSelecionadas().get(f).getID() != ((QuestaoFechadaBean)bean.getQuestoes().get(i)).getID()){
+                        // CORREÇÃO 9: Comparar questões por ID primeiro
+                        QuestaoFechadaBean questao1 = (QuestaoFechadaBean)cp.getQuestoes().get(i);
+                        QuestaoFechadaBean questao2 = (QuestaoFechadaBean)bean.getQuestoes().get(i);
+                        
+                        // Se são questões diferentes, não precisa comparar alternativas
+                        if(questao1.getID() != questao2.getID()) {
+                            existe = false;
+                            break;
+                        }
+                        
+                        // CORREÇÃO 10: Verificação defensiva contra listas null ou vazias
+                        ArrayList<AlternativaBean> alts1 = questao1.getSelecionadas();
+                        ArrayList<AlternativaBean> alts2 = questao2.getSelecionadas();
+                        
+                        if(alts1 == null || alts2 == null) {
+                            System.err.println("ERRO: Lista de alternativas selecionadas é null para questão " + questao1.getID());
+                            existe = false;
+                            break;
+                        }
+                        
+                        if(alts1.size() != alts2.size()) {
+                            existe = false;
+                            break;
+                        }
+                        
+                        // CORREÇÃO 11: Comparar alternativas corretamente (ID da alternativa com ID da alternativa)
+                        for(int f = 0 ; f < alts1.size() ; f++){
+                            if(alts1.get(f) == null || alts2.get(f) == null) {
+                                System.err.println("ERRO: Alternativa null encontrada na posição " + f + " da questão " + questao1.getID());
+                                existe = false;
+                                break;
+                            }
+                            if(alts1.get(f).getID() != alts2.get(f).getID()){
                                 existe = false;
                                 break;
                             }
